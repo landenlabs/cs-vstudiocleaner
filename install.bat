@@ -6,11 +6,11 @@ set prog=vstudiocleaner
 set bindir=d:\opt\bin
 set msbuild=F:\opt\VisualStudio\2022\Preview\MSBuild\Current\Bin\MSBuild.exe
 
- 
+
 @echo ---- Clean Release %prog% 
-lldu -sum obj bin 
-rmdir /s obj  2> nul
-rmdir /s bin  2> nul
+lldu -sum %prog%\obj %prog%\bin 
+rmdir /s %prog%\obj  2> nul
+rmdir /s %prog%\bin  2> nul
 @rem %msbuild% %prog%.sln  -t:Clean
 
 @echo.
@@ -19,14 +19,14 @@ rmdir /s bin  2> nul
 
 @echo.
 @echo ---- Build done 
-if not exist "bin\x64\Release\%prog%.exe" (
-   echo Failed to build bin\x64\Release\%prog%.exe
+if not exist "%prog%\bin\x64\Release\%prog%.exe" (
+   echo Failed to build %prog%\bin\x64\Release\%prog%.exe
    goto _end
 )
  
-@echo ---- Copy Release to c:\opt\bin2
-copy  bin\x64\Release\%prog%.exe %bindir%\%prog%.exe
-dir   bin\x64\Release\%prog%.exe %bindir%\%prog%.exe
+@echo ---- Copy Release to %bindir%
+copy  %prog%\bin\x64\Release\%prog%.exe %bindir%\%prog%.exe
+ld -hp   %prog%\bin\x64\Release\%prog%.exe %bindir%\%prog%.exe
 
 @rem play happy tone
 rundll32.exe cmdext.dll,MessageBeepStub

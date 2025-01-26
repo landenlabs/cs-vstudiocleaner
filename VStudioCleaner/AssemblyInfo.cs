@@ -28,7 +28,7 @@ using System.Resources;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("2.9.*")]
+[assembly: AssemblyVersion("3.1.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
@@ -59,6 +59,6 @@ using System.Resources;
 [assembly: AssemblyKeyFile("")]
 [assembly: AssemblyKeyName("")]
 [assembly: ComVisibleAttribute(false)]
-[assembly: NeutralResourcesLanguageAttribute("")]
+[assembly: NeutralResourcesLanguage("en")]
 [assembly: GuidAttribute("597755D2-8A56-4E65-9674-15D1A8EE2A89")]
-[assembly: AssemblyFileVersionAttribute("2.9")]
+[assembly: AssemblyFileVersion("3.1")]

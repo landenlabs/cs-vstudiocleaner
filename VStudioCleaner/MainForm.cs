@@ -966,9 +966,9 @@ namespace VStudioCleaner_ns
 
         public string ProductNameAndVersion()
         {
-            string appName = Application.ProductName;
+			string appName = Application.ProductName.Replace(" x64", "");
             string appVern = Application.ProductVersion;
-            return appName + "V" + appVern.Substring(0, 3); //  Get part of version string "n.n"
+            return appName + " V" + appVern; 
         }
 
         private void openRegistryShell_Click(object sender, EventArgs e)

@@ -1382,7 +1382,7 @@ namespace VStudioCleaner_ns
 
         private void AddToTotals(ListViewItem item)
         {
-            if (item.SubItems[sStatusCol].Text != "dir")
+            // if (item.SubItems[sStatusCol].Text != "dir")
                 TotalFiles++;
 
             try
